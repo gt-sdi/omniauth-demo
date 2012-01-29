@@ -5,9 +5,10 @@ Based on the Quinton Wall's [tutorial](http://devcenter.heroku.com/articles/omni
 1. Clone this repo to your development environment.
 1. Create _.key_ and _.crt_ files as per this [article](http://www.akadia.com/services/ssh_test_certificate.html).
 1. Create the directory _lib/certs_ and copy the _.key_ and _.crt_ files from the previous step to it.
+1. Configure WEBrick so it supports [HTTPS](http://en.wikipedia.org/wiki/HTTP_Secure) using this  [article](http://www.nearinfinity.com/blogs/chris_rohr/configuring_webrick_to_use_ssl.html) as a guide.  Don't forget to modify the generic paths so they point to the _.key_ and _.crt_ files you created above. 
 1. Create and then modify _config/omniauth.yml_ as shown below so that it has your Salesforce key and secret, changing the placeholders to your actual key and secret.
-1. Start WEBrick with `rails server` while in the root directory of your project.
 1. Make sure the Salesforce account to which these keys are related has REST enabled!
+1. Start WEBrick with `rails server` while in the root directory of your project.
 1. Use your browser to navigate to `https://localhost:3000/auth/salesforce`.
 1. You should be redirected to Salesforce login page, to which you enter your credentials.
 1. Approve access by the application.
