@@ -1,5 +1,10 @@
 OmniauthDemo::Application.routes.draw do
   get "sessions/create"
+  
+  root :to => 'sessions#index'
+  
+  resources :accounts, :only => :index
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
