@@ -9,10 +9,22 @@ Based on the Quinton Wall's [tutorial](http://devcenter.heroku.com/articles/omni
 1. Create and then modify _config/omniauth.yml_ as shown below so that it has your Salesforce key and secret, changing the placeholders to your actual key and secret.
 1. Make sure the Salesforce account to which these keys are related has REST enabled!
 1. Start WEBrick with `rails server` while in the root directory of your project.
-1. Use your browser to navigate to `https://localhost:3000/auth/salesforce`.
+1. Point browser to `https://localhost:3000`
+1. Click 'auth/salesforce' link
 1. You should be redirected to Salesforce login page, to which you enter your credentials.
 1. Approve access by the application.
-1. At this point, you should see the dump of the Account information.
+1. When returned to the home page, you should now see the Auth token
+1. Click on the '/accounts' link.
+1. You should see the dump of the Account information.
+
+To see Oauth refresh token in action:
+
+1. Login to Salesforce ... Navigate to 'Administration Setup > Security Controls > Session Settings
+1. Set session timeout to shortest (15 min.)
+1. Start / restart this demo app ... follow steps 8 - 14 above to get Account data.
+1. Wait longer than session timeout (15 min.).
+1. Refresh account page. You will get renewed display of account data.
+1. Look at server log ... see refresh token flow.
 
 ## omniauth.yml
 
