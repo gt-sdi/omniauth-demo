@@ -1,0 +1,12 @@
+<h1>Omniauth Demo</h1>
+
+<h2>Authentication</h2>
+<p>Get authentication credentials for our app from Salesforce: <%= link_to('/auth/salesforce', '/auth/salesforce') %> (Omniauth call to Salesforce)</p>
+<p>Current authorization:</p>
+<ul>
+	<li>Auth Token: <%= ENV['sfdc_token'] %></li>
+	<li>Auth Update Time: <%= ENV['sf_update_time'] %></li>
+</ul>
+
+<h2>Access Salesforce Data</h2>
+<p>Get first hundred Accounts from Salesforce: <%= link_to('/accounts', '/accounts') %></p>
